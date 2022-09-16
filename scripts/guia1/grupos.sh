@@ -1,7 +1,6 @@
 #!/bin/bash
 
-groupadd comision1
-
+groupadd comision1 
 groupadd comision2
 
 grep comision1 /etc/group  #Me da como resultado el ID del grupo
