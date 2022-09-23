@@ -11,7 +11,7 @@ exit
 
 mkdir TrabajoDeAlumno
 
-cp /root/datosdecompañeros.txt TrabajoDeAlumno/
+cp datosdecompañeros.txt TrabajoDeAlumno/
 
 useradd alumno
 

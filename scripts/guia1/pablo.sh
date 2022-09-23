@@ -18,7 +18,7 @@ find /usr/bin -name kalarm
 
 #si lo encuentra realiza la copia
 
-cp /usr/bin/kalarm Trabajo/
+cp /usr/bin/kalarm /trabajo 
 
 #ahora me dirijo al directorio Trabajo
 
@@ -33,8 +33,8 @@ ls -l kalarm
 mv kalarm alarma
 
 #cambiamos los permisos de alarma para que solo lo ejecute el propietario
-
-chmod 700 alarma #chmod rwx
+chmod a-rwx  alarma
+chmod 700 alarma #chmod u+rwx
 
 #Con respecto a la ultima pregunta, al no poder ingresar al directorio, no puedo ver el archivo. Al intentar abrir el archivo (con el VI), el contenido de este permanece oculto.
 
