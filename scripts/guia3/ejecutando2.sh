@@ -1,7 +1,3 @@
-#!/bin/bash
-
-#Guardo los datos de ps aux en eje.temp
-ps aux >> eje.temp
 
 #tengo una lista con los 4 navegadores que el ejercico verifique que este abierto
 lista=(firefox chrome brave opera)
@@ -11,17 +7,13 @@ lista=(firefox chrome brave opera)
 for palabra in ${lista[@]}
 do
 	#Cada vez que encuentra la palabra la guarda en un temp	
-	cat eje.temp|grep -i $palabra > final.temp
+	FINAL=$(ps aux | grep -i $palabra | grep -v grep)
 
 	#si el archivo contiene un elemento, muestra "true" en caso contrario "false"
 
-	if [[ -s final.temp ]];
+	if [[ ! -z $FINAL ]];
 	then 
-		echo "true"
-	else 
-		echo "false"
+		echo "$palabra is running!"
 	fi
-	rm final.temp
 done
 
-rm eje.temp
