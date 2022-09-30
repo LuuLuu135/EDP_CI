@@ -2,15 +2,14 @@
 
 ps aux >> eje.temp
 
-Cadena = 'firefox chrome brave opera'
+lista=(firefox chrome brave opera)
 
-for palabra in $Cadena
+for palabra in ${lista[@]}
 do
 	
-	grep -i ""  eje.temp > final.temp
+	cat eje.temp|grep -i $palabra > final.temp
 
-
-	if [[ -e final.temp ]];
+	if [[ -s final.temp ]];
 	then 
 		echo "true"
 	else 
@@ -18,8 +17,5 @@ do
 	fi
 	rm final.temp
 done
-
-
-
 
 rm eje.temp
